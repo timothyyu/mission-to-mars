@@ -14,7 +14,9 @@ mongo=PyMongo(app) #Flask <--> PyMongo link
 
 conn = "mongodb://localhost:27017"
 client = pymongo.MongoClient(conn)
-db = client.mars_news_collection
+#db = client.mars_news_collection
+	#db and collection cannot have same name for connection to be successful
+db = client.mars1 
 collection = db.mars_news_collection
 
 #Flask route declaration
@@ -22,7 +24,7 @@ collection = db.mars_news_collection
 #Index page
 @app.route('/')
 def index():
-	#return ""
+	mars = mongo.db.mars_news_collection.find_one()
 	return render_template('index.html', mars=mars)
 
 #/scrape route 
@@ -40,6 +42,8 @@ def scrape():
 		mars_data,
 		upsert=True
 	)
+	#Docmentation on the update() method:
+	#https://docs.mongodb.com/manual/reference/method/db.collection.update/
 
 	print("================================================================")
 	print("Data scrape end:\n")

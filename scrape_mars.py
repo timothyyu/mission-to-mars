@@ -42,6 +42,7 @@ def scrape():
     #set url in splinter/chromedriver
     html = browser.html
     soup = BeautifulSoup(html, "html.parser")
+
     time.sleep(2)
     news_title = soup.find('div',class_='content_title') #.text     #get_text() will not work here
     news_title = news_title.text
@@ -193,8 +194,11 @@ def scrape():
     #Pass to dict
     mars_news_scraped_dict["hemisphere_images"] = hemisphere_url_images_complete
 
+    #Alternative method to pass to dict (testing/debugging)
+    #mars_news_scraped_dict.update(hemisphere_url_images_complete)
+
     time.sleep(0.5)
-    
+
     #Close chrome window (splinter/chromedriver)
     browser.quit()
 
