@@ -18,18 +18,23 @@ db = client.mars_news_collection
 collection = db.mars_news_collection
 
 #Flask route declaration
+
+#Index page
 @app.route('/')
 def index():
-	return ""
-	#return render_template('index.html', mars=mars)
+	#return ""
+	return render_template('index.html', mars=mars)
 
+#/scrape route 
 @app.route('/scrape')
 def scrape():
 	print("Data scrape start:\n")
 	print("================================================================")
 
 	mars = mongo.db.mars_news_collection
+
 	mars_data = scrape_mars.scrape()
+
 	mars.update(
 		{},
 		mars_data,

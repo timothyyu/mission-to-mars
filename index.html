@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>mission-to-mars</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+<body>
+  <div clas="container">
+    <div class="jumbotron text-center">
+
+      <h1>Mars Data</h1>
+      <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape Data</a></p>
+    </div>
+      
+    <!-- Scraped data display/load-->
+    <div class="row">
+      <div class="col-md-6 col-md-offset-4">
+
+        <!-- Featured image from JPL Featured Space Image website -->
+        <h3>Featured Mars Image</h3>
+        <img src= {{ mars.jpl_mars_image}} style="width: 100%"/>
+
+        <!-- Latest News title + paragraph text from NASA -->
+        <h3>{{ mars.news_title }}</h3>
+        <p>{{ mars.news_p_text }}</p>
+
+        <!-- Mars Hemispheres -->
+        <!-- PLACEHOLDER for Mars Hemispheres -->
+      </div>
+    </div>
+
+    <!-- Latest Mars Weather (@marswxreport, Twitter)-->
+    <div class="row"> 
+        <h4>Latest Mars Weather</h4>
+        <p>{{ mars.current_mars_weather }} </p>
+    </div>
+
+    <!-- Mars facts (table) -->
+    <div class="row">
+      <h4>Mars Facts</h4>
+      <div>{{ mars.mars_facts|safe}}</div>
+    </div>
+
+    <!-- Mars vs Earth Size diagram and text  -->
+    <div class="row">
+      <h4>Mars vs. Earth Size</h4>
+      <img src= {{ mars.diagram_img}} style="width: 100%"/>
+      <div>{{ mars.diagram_text|safe}}</div>
+    </div>
+
+  </div>
+
+</body>
+</html>
+
+
+ 
