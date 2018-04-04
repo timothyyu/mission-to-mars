@@ -19,40 +19,49 @@
       
     <!-- Scraped data display/load-->
     <div class="row">
-      <div class="col-md-6 col-md-offset-4">
+      <div class="col-md-6">
 
         <!-- Featured image from JPL Featured Space Image website -->
         <h3>Featured Mars Image</h3>
         <img src= {{ mars.jpl_mars_image}} style="width: 100%"/>
 
         <!-- Latest News title + paragraph text from NASA -->
-        <h3>{{ mars.news_title }}</h3>
+        <h3>Latest Mars News:</h3>
+        <h5>{{ mars.news_title }}</h5>
         <p>{{ mars.news_p_text }}</p>
 
         <!-- Mars Hemispheres -->
-        <!-- PLACEHOLDER for Mars Hemispheres -->
+        <h4>Mars Hemispheres</h4>
+
+        <p>{{ mars.hemisphere_images[0]["Title"]}}:</p>
+        <img src= {{ mars.hemisphere_images[0]["Image URL"]}} style="width: 100%"/>
         
+        <p>{{ mars.hemisphere_images[1]["Title"]}}:</p>
+        <img src= {{ mars.hemisphere_images[1]["Image URL"]}} style="width: 100%"/>
+
+        <p>{{ mars.hemisphere_images[2]["Title"]}}:</p>
+        <img src= {{ mars.hemisphere_images[2]["Image URL"]}} style="width: 100%"/>
+
+        <p>{{ mars.hemisphere_images[3]["Title"]}}:</p>
+        <img src= {{ mars.hemisphere_images[3]["Image URL"]}} style="width: 100%"/>
+      
       </div>
     </div>
 
     <!-- Latest Mars Weather (@marswxreport, Twitter)-->
-    <div class="row"> 
-        <h4>Latest Mars Weather</h4>
-        <p>{{ mars.current_mars_weather }} </p>
-    </div>
+    <h4>Latest Mars Weather</h4>
+    <p>{{ mars.current_mars_weather }} </p>
+    
 
     <!-- Mars facts (table) -->
-    <div class="row">
-      <h4>Mars Facts</h4>
-      <div>{{ mars.mars_facts|safe}}</div>
-    </div>
+    <h4>Mars Facts</h4>
+    <div>{{ mars.mars_facts|safe}}</div>
+    
 
     <!-- Mars vs Earth Size diagram and text  -->
-    <div class="row">
-      <h4>Mars vs. Earth Size</h4>
-      <img src= {{ mars.diagram_img}} style="width: 100%"/>
-      <div>{{ mars.diagram_text|safe}}</div>
-    </div>
+    <h4>Mars vs. Earth Size:</h4>
+    <img src= {{ mars.diagram_img}} style="width: 100%"/>
+    <div>{{ mars.diagram_text|safe}}</div>
 
   </div>
 

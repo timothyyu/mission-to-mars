@@ -57,7 +57,7 @@ def scrape():
     mars_news_scraped_dict ["news_p_text"] = news_p    
 
     #Scrape featured image from JPL Featured Space Image
-    url = 'https://www.jpl.nasa.gov/spaceimages/?search=&category=Mars'
+    url = "https://www.jpl.nasa.gov/spaceimages/?search=&category=Mars"
     browser.visit(url)
     time.sleep(2)
     browser.click_link_by_partial_text('FULL IMAGE')
