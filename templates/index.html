@@ -26,13 +26,25 @@
         <img src= {{ mars.jpl_mars_image}} style="width: 100%"/>
 
         <!-- Latest News title + paragraph text from NASA -->
-        <h3>{{ mars.news_title }}</h3>
+        <h3>Latest Mars News:</h3>
+        <h5>{{ mars.news_title }}</h5>
         <p>{{ mars.news_p_text }}</p>
 
         <!-- Mars Hemispheres -->
         <h4>Mars Hemispheres</h4>
-        <img src= {{ mars.hemisphere_images[0]['image']}} style="width: 100%"/>
+
+        <p>{{ mars.hemisphere_images[0]["Title"]}}:</p>
+        <img src= {{ mars.hemisphere_images[0]["Image URL"]}} style="width: 100%"/>
         
+        <p>{{ mars.hemisphere_images[1]["Title"]}}:</p>
+        <img src= {{ mars.hemisphere_images[1]["Image URL"]}} style="width: 100%"/>
+
+        <p>{{ mars.hemisphere_images[2]["Title"]}}:</p>
+        <img src= {{ mars.hemisphere_images[2]["Image URL"]}} style="width: 100%"/>
+
+        <p>{{ mars.hemisphere_images[3]["Title"]}}:</p>
+        <img src= {{ mars.hemisphere_images[3]["Image URL"]}} style="width: 100%"/>
+      
       </div>
     </div>
 
@@ -47,7 +59,7 @@
     
 
     <!-- Mars vs Earth Size diagram and text  -->
-    <h4>Mars vs. Earth Size</h4>
+    <h4>Mars vs. Earth Size:</h4>
     <img src= {{ mars.diagram_img}} style="width: 100%"/>
     <div>{{ mars.diagram_text|safe}}</div>
 
